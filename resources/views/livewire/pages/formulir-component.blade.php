@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ route('arsip.create') }}" class="btn btn-success">Tambah Arsip</a>
+    <a href="{{ route('formulir.create') }}" class="btn btn-primary">Isi Formulir</a>
     <div class="mt-2">
         @if (session()->has('message'))
             <div class="alert alert-success">
@@ -30,7 +30,7 @@
                                 <td>{{ $item->upload }}</td>
                                 <td>{{ $item->date }}</td>
                                 <td class="d-flex gap-1">
-                                    <a href="{{ route('arsip.update', $item->id) }}" class="btn btn-blue">Edit</a>
+                                    <a href="{{ route('formulir.update', $item->id) }}" class="btn btn-blue">Edit</a>
                                     <a href="#" wire:click.prevent="destroy({{ $item->id }})" class="btn btn-red">Delete</a>
                                     <a href="{{ $item->file }}" download>
                                         <button class="btn btn-green">Unduh</button>

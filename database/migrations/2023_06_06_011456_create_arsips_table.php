@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('arsip', function (Blueprint $table) {
+        Schema::create('formulir', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('upload');
-            $table->date('date');
-            $table->binary('file');
+            $table->integer('nisn');
+            $table->string('gender');
+            $table->date('birthday');
+            $table->string('address');
+            $table->string('school_origin');
+            $table->string('parents_name');
+            $table->string('parents_occupation');
+            $table->string('achievement');
+            $table->binary('additional_file');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('arsip');
+        Schema::dropIfExists('formulir');
     }
 };

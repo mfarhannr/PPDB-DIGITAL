@@ -9,7 +9,7 @@
     </div>
 
     <div class="title">
-        <h1>Tambah Arsip</h1>
+        <h1>Isi Formulir</h1>
     </div>
 
     <div class="card">
