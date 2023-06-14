@@ -16,13 +16,18 @@ return new class extends Migration
             $table->string('name');
             $table->integer('nisn');
             $table->string('gender');
+            $table->string('place');
             $table->date('birthday');
+            $table->string('religion');
+            $table->integer('phone');
+            $table->string('disease');
             $table->string('address');
             $table->string('school_origin');
             $table->string('parents_name');
             $table->string('parents_occupation');
+            $table->string('parents_contact');
             $table->string('achievement');
-            $table->binary('additional_file');
+            $table->binary('file');
             $table->timestamps();
         });
     }

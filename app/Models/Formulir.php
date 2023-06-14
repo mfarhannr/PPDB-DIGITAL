@@ -9,5 +9,5 @@ class Formulir extends Model
 {
     use HasFactory;
     protected $table = 'formulir';
-    protected $fillable = ['full_name', 'nisn', 'gender', 'birthday', 'address', 'school_origin', 'parents_name', 'parents_occupation', 'achievement', 'additional_file'];
+    protected $fillable = ['name', 'nisn', 'place', 'gender', 'birthday', 'religion', 'phone', 'disease',  'address', 'school_origin', 'parents_name', 'parents_occupation', 'parents_contact', 'achievement', 'file'];
 }

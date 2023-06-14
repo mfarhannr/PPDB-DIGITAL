@@ -13,7 +13,7 @@
                 <table class="table table-vcenter card-table">
                     <thead>
                         <tr>
-                            <th>Nomor</th>
+                            <tr>Nomor</tr>
                             <th>Nama Dokumen</th>
                             <th>Nama File</th>
                             <th>Diupload oleh</th>

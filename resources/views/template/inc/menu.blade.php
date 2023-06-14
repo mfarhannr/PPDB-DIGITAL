@@ -8,12 +8,12 @@
         <div class="card">
         <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside"
             role="button" aria-expanded="false">
-            <span class="nav-link-title"> Formulir </span>
+            <span class="nav-link-title"> Daftar </span>
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item {{ Request::path() === 'formulir' ? 'text-light bg-primary' : '' }}"
                 href="{{ route('formulir') }}" rel="noopener">
-                Isi Formulir
+                Isi Formulir Pendaftaran
             </a>
             <a class="dropdown-item" href="#" rel="noopener">
                 Nilai

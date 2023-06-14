@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class UpdateComponent extends Component
 {
     use WithFileUploads;
-    public $name, $nisn, $gender, $birthday, $address, $school_origin, $parents_name, $parents_occupation, $achievement, $file;
+    public $name, $nisn, $place, $gender, $birthday, $religion, $phone, $disease, $address, $school_origin, $parents_name, $parents_occupation, $parents_contact, $achievement, $file;
     public $formulirId;
     public $findFormulir;
     public function mount($formulirId)
@@ -35,16 +35,21 @@ class UpdateComponent extends Component
         $this->validate();
         $updateFormulir = Formulir::find($this->formulirId);
         $updateFormulir->update([
-            'full_name' => $this->name,
+            'name' => $this->name,
             'nisn' => $this->nisn,
             'gender' => $this->gender,
+            'place' => $this->place,
             'birthday' => $this->birthday,
+            'religion' => $this->religion,
+            'phone' => $this->phone,
+            'disease' => $this->disease,
             'address' => $this->address,
             'school_origin' => $this->school_origin,
             'parents_name' => $this->parents_name,
             'parents_occupation' => $this->parents_occupation,
+            'parents_contact' => $this->parents_contact,
             'achievement' => $this->achievement,
-            'additional_file' => $this->file,
+            'file' => $this->file,
         ]);
         session()->flash('message', 'Update file sukses!');
         return redirect()->back();
