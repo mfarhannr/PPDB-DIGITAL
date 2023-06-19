@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nisn');
-            $table->string('gender');
+            $table->boolean('gender');
             $table->string('place');
             $table->date('birthday');
             $table->string('religion');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('parents_occupation');
             $table->string('parents_contact');
             $table->string('achievement');
-            $table->binary('file');
+            $table->string('file');
             $table->timestamps();
         });
     }

@@ -8,14 +8,16 @@
         @endif
     </div>
 
-    <div class="title">
-        <h1>Update Formulir Pendaftaran</h1>
+    <div class="card">
+        <div class="card-body">
+        <h2>Update Formulir</h2>
+        </div>
     </div>
 
     <div class="card">
         <div class="card-body">
             <form wire:submit="update" autocomplete="off">
-
+                
                 <div class="form-group mb-3">
                     <label class="form-label">Nama Lengkap</label>
                     <input type="text" name="file" wire:model="name" class="form-control"
@@ -26,7 +28,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">NISN</label>
-                    <input type="integer" name="nisn" wire:model="nisn" class="form-control"
+                    <input type="number" name="nisn" wire:model="nisn" class="form-control"
                         placeholder="isi nisn...">
                 </div>
                 <div class="form-group mb-3">

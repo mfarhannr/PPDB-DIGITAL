@@ -1,4 +1,4 @@
-<div>
+<div class="mt-3">
 
     <div>
         @if (session()->has('message'))
@@ -8,25 +8,29 @@
         @endif
     </div>
 
-    <div class="title">
-        <h1>Formulir Pendaftaran</h1>
-    </div>
 
     <div class="card">
         <div class="card-body">
-            <form wire:submit="create" autocomplete="off">
+        <h2>Masukkan Data Pendaftar</h2>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <form wire:submit.prevent="create" autocomplete="off">
 
                 <div class="form-group mb-3">
                     <label class="form-label">Nama Lengkap</label>
                     <input type="text" name="name" wire:model="name" class="form-control"
-                        placeholder="isi nama lengkap...">
-                    @if ($errors->has('full_name'))
-                        <span class="text-danger">{{ $errors->first('full_name') }}</span>
-                    @endif
+                        placeholder="masukkan nama lengkap...">
+                    @error('name')
+                        <span class="error">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">NISN</label>
-                    <input type="integer" name="nisn" wire:model="nisn" class="form-control"
+                    <input type="number" name="nisn" wire:model="nisn" class="form-control"
                         placeholder="isi nisn...">
                 </div>
                 <div class="form-group mb-3">
@@ -38,13 +42,13 @@
                 <div class="form-group mb-3">
                     <label class="form-label">Kelamin</label>
 
-                    <input class="form-radio-input" type="radio" name="gender" wire:model="gender" value="laki"
+                    <input class="form-radio-input" type="radio" name="gender" wire:model="gender" value="0"
                         checked="">
                     <span class="form-radio-sign">Laki - Laki</span>
                     </label>
                     <label class="form-radio-label ml-3 mb-3">
                         <input class="form-radio-input" type="radio" name="gender" wire:model="gender"
-                            value="perempuan">
+                            value="1">
                         <span class="form-radio-sign">Perempuan</span>
                     </label>
                 </div>
@@ -56,7 +60,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">Tanggal lahir</label>
-                    <input type="date" name="birthday" wire:model="place" class="form-control"
+                    <input type="date" name="birthday" wire:model="birthday" class="form-control"
                         placeholder="tanggal lahir...">
                 </div>
 
@@ -121,7 +125,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Simpan</button>
-                <a href="{{ route('formulir') }}">
+                <a href="#">
                     <button class="btn btn-red">Kembali</button>
                 </a>
 

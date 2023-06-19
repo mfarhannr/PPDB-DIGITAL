@@ -11,7 +11,7 @@ class FormulirComponent extends Component
     {
         $findFormulir= Formulir::find($formulirId);
         $findFormulir->delete;
-        session()->flash('message', 'Dokumen ' . $findFormulir->name. ' Berhasil dihapus!');
+        session()->flash('message', 'Formulir ' . $findFormulir->name. ' Berhasil dihapus!');
     }
 
     public function render()

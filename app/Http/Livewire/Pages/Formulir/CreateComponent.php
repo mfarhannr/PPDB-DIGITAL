@@ -18,7 +18,7 @@ class CreateComponent extends Component
     {
         $this->validate();
 
-        Formulir::create([
+         Formulir::create([
             'name' => $this->name,
             'nisn' => $this->nisn,
             'gender' => $this->gender,
@@ -35,6 +35,8 @@ class CreateComponent extends Component
             'achievement' => $this->achievement,
             'file' => $this->file,
         ]);
+        $this->file->store('files');
+
         session()->flash('message', 'Formulir telah Dibuat!');
         return redirect(back());
     }

@@ -1,5 +1,7 @@
 <div>
-    <a href="{{ route('pengguna.create') }}" class="btn btn-success">Tambah Pengguna</a>
+    <div class="mt-3">
+    <a href="{{ route('berkas.create') }}" class="btn btn-primary">lengkapi Berkas</a>
+    </div>
     <div class="mt-2">
         @if (session()->has('message'))
             <div class="alert alert-success">
@@ -14,11 +16,13 @@
                     <thead>
                         <tr>
                             <th>Nomor</th>
-                            <th>Nama Lengkap</th>
-                            <th>Jabatan</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Role User</th>
+                            <th>Nama Pendaftar</th>
+                            <th>Foto</th>
+                            <th>Kartu Keluarga</th>
+                            <th>KTP Orangtua</th>
+                            <th>Nilai Rapot</th>
+                            <th>Ijazah</th>
+                            <th>File Tambahan</th>
                             <th class="w-1">Opsi</th>
                         </tr>
                     </thead>
@@ -27,12 +31,13 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->jabatan }}</td>
-                                <td>{{ $item->email}}</td>
-                                <td>{{ $item->password}}</td>
-                                <td>{{ $item->roleuser}}</td>
+                                <td>{{ $item->foto }}</td>
+                                <td>{{ $item->kk }}</td>
+                                <td>{{ $item->nilai_rapot}}</td>
+                                <td>{{ $item->ijazah }}</td>
+                                <td>{{ $item->file }}</td>
                                 <td class="d-flex gap-1">
-                                    <a href="" class="btn btn-blue">Edit</a>
+                                    <a href="{{ route('berkas.update', $item->id) }}" class="btn btn-blue">Edit</a>
                                     <a href="#" wire:click.prevent="destroy({{ $item->id }})" class="btn btn-red">Delete</a>
                                 </td>
                             </tr>
@@ -43,3 +48,4 @@
         </div>
     </div>
 </div>
+
