@@ -16,7 +16,7 @@ class CekRole
     public function handle($request, Closure $next, ...$roles)
     {
         if (in_array($request->user()->role, $roles)){
-            return redirect('/login');
+            return redirect('/');
         }
         return $next($request);
     }

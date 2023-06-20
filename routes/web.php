@@ -26,11 +26,9 @@ use App\Http\Livewire\Pages\Berkas\UpdateBerkasComponent;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard');
-// });
-
-// login & logout
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/login', function () {
     return view('user.login');
 })->name('login');
@@ -38,18 +36,16 @@ Route::get('/login', function () {
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => ['auth', 'CekRole:admin']], function () {
+Route::group(['middleware' => ['auth', 'CekRole:admin,user']], function () {
     Route::get("/dashboard", HomeComponent::class)->name("dashboard");
     Route::get("/formulir", FormulirComponent::class)->name("formulir");
     Route::get("/nilai", NilaiComponent::class)->name("nilai");
     Route::get("/berkas", BerkasComponent::class)->name("berkas");
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::group(['middleware' => ['auth', 'CekRole:user']], function () {
     Route::get("/dashboard", HomeComponent::class)->name("dashboard");
-    // Route::get("/formulir", FormulirComponent::class)->name("formulir");
-    // Route::get("/berkas", BerkasComponent::class)->name("berkas");
-
     // formulir
     Route::get("/formulir/create", CreateComponent::class)->name("formulir.create");
     Route::get("/formulir/{formulirId}/update", UpdateComponent::class)->name("formulir.update");
